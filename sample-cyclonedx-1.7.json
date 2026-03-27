@@ -1,0 +1,174 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "serialNumber": "urn:uuid:3e671687-395b-41f5-a30f-a58921a69b79",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2024-01-15T10:30:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "sbom-generator",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "sample-application",
+      "version": "1.0.0",
+      "bom-ref": "pkg:maven/com.example/sample-application@1.0.0"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "pkg:maven/org.apache.commons/commons-lang3@3.12.0",
+      "type": "library",
+      "group": "org.apache.commons",
+      "name": "commons-lang3",
+      "version": "3.12.0",
+      "description": "Apache Commons Lang provides a host of helper utilities for the java.lang API",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "name": "Apache License 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:maven/org.apache.commons/commons-lang3@3.12.0",
+      "cpe": "cpe:2.3:a:apache:commons_lang:3.12.0:*:*:*:*:*:*:*",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5826bea5f3668c1b0e06b4f52c2c9a5a5f5d4f5a5b5c5d5e5f5a5b5c5d5e5f5a"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://commons.apache.org/proper/commons-lang/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/apache/commons-lang"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/lodash@4.17.21",
+      "type": "library",
+      "group": "lodash",
+      "name": "lodash",
+      "version": "4.17.21",
+      "description": "Lodash modular utilities",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "name": "MIT License"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lodash@4.17.21",
+      "supplier": {
+        "name": "Lodash Contributors"
+      }
+    },
+    {
+      "bom-ref": "pkg:pypi/requests@2.31.0",
+      "type": "library",
+      "group": "psf",
+      "name": "requests",
+      "version": "2.31.0",
+      "description": "Python HTTP for Humans",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "name": "Apache License 2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/requests@2.31.0",
+      "cpe": "cpe:2.3:a:python-requests:requests:2.31.0:*:*:*:*:*:*:*"
+    }
+  ],
+  "services": [
+    {
+      "bom-ref": "service:api-gateway",
+      "name": "API Gateway",
+      "version": "2.0.0",
+      "description": "Main API Gateway service",
+      "provider": {
+        "name": "Example Inc.",
+        "url": ["https://example.com"]
+      },
+      "endpoints": [
+        "https://api.example.com/v1",
+        "https://api.example.com/v2"
+      ],
+      "authenticated": true,
+      "x-trust-boundary": false,
+      "trustZone": "internal"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "bom-ref": "vuln:CVE-2021-44228",
+      "id": "CVE-2021-44228",
+      "source": {
+        "name": "NVD",
+        "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-44228"
+      },
+      "description": "Apache Log4j2 JNDI features do not protect against attacker controlled LDAP and other JNDI related endpoints.",
+      "recommendation": "Upgrade to Log4j 2.17.0 or later",
+      "ratings": [
+        {
+          "source": {
+            "name": "NVD"
+          },
+          "score": 10.0,
+          "severity": "critical",
+          "method": "CVSSv3",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ],
+      "cwes": [502],
+      "published": "2021-12-10T00:00:00Z",
+      "updated": "2023-01-15T00:00:00Z",
+      "affects": [
+        {
+          "ref": "pkg:maven/org.apache.logging.log4j/log4j-core@2.14.0"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:maven/com.example/sample-application@1.0.0",
+      "dependsOn": [
+        "pkg:maven/org.apache.commons/commons-lang3@3.12.0",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:pypi/requests@2.31.0"
+      ]
+    }
+  ],
+  "compositions": [
+    {
+      "bom-ref": "composition:complete",
+      "aggregate": "complete",
+      "assemblies": [
+        "pkg:maven/org.apache.commons/commons-lang3@3.12.0",
+        "pkg:npm/lodash@4.17.21",
+        "pkg:pypi/requests@2.31.0"
+      ]
+    }
+  ]
+}

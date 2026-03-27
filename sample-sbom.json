@@ -1,0 +1,93 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "metadata": {
+    "component": {
+      "name": "sample-application",
+      "version": "1.0.0",
+      "bom-ref": "pkg:sample-application@1.0.0"
+    }
+  },
+  "components": [
+    {
+      "name": "lodash",
+      "version": "4.17.21",
+      "purl": "pkg:npm/lodash@4.17.21",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "express",
+      "version": "4.18.2",
+      "purl": "pkg:npm/express@4.18.2",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "react",
+      "version": "18.2.0",
+      "purl": "pkg:npm/react@18.2.0",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "axios",
+      "version": "1.6.0",
+      "purl": "pkg:npm/axios@1.6.0",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "moment",
+      "version": "2.29.4",
+      "purl": "pkg:npm/moment@2.29.4",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "underscore",
+      "version": "1.13.6",
+      "purl": "pkg:npm/underscore@1.13.6",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "jquery",
+      "version": "3.7.1",
+      "purl": "pkg:npm/jquery@3.7.1",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "bootstrap",
+      "version": "5.3.2",
+      "purl": "pkg:npm/bootstrap@5.3.2",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "webpack",
+      "version": "5.89.0",
+      "purl": "pkg:npm/webpack@5.89.0",
+      "licenses": [
+        {"license": {"name": "MIT"}}
+      ]
+    },
+    {
+      "name": "typescript",
+      "version": "5.3.2",
+      "purl": "pkg:npm/typescript@5.3.2",
+      "licenses": [
+        {"license": {"name": "Apache-2.0"}}
+      ]
+    }
+  ]
+}
